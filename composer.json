@@ -1,0 +1,5 @@
+{
+    "require": {
+        "symfony/panther": "^0.7.1"
+    }
+}
