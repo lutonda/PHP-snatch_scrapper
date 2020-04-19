@@ -3,6 +3,7 @@
 
 require __DIR__ . '/vendor/autoload.php'; // Composer's autoloader
 
+$date=date("Y-m-dTH:i:s");
 
 $sources = [
     ['BFA', 'https://www.bfa.ao/pt/particulares/pesquisa-de-cambios/', 'table.table.table-style-1.js-exchangeTable'],
@@ -13,7 +14,7 @@ $sources = [
     ['BCI', 'https://www.bci.ao/', '.tabelas-container div.tabelas div.body'],
     ['BPC', 'http://www.bpc.ao/bpc/pt/', '#foottoolbox .rightquarter .cambio tbody']
 ];
-function getContent($x,$y,$z){
+function getContent($x,$y,$z,$date){
 
     $client = \Symfony\Component\Panther\Client::createChromeClient();
     // Or, if you care about the open web and prefer to use Firefox
@@ -32,8 +33,8 @@ function getContent($x,$y,$z){
     $url='?';
     $url.='source='.$x;
     $url.='&data=';
-
     $url.= base64_encode($data);
+    $url.='&date='.$date;
     echo $url;
     //$client->takeScreenshot('screen.png'); // Yeah, screenshot!
 
@@ -60,5 +61,5 @@ function submitData($url)
 }
 
 foreach ($sources as $s) {
-    getContent($s[0],$s[1],$s[2]);
+    getContent($s[0],$s[1],$s[2],$date);
 }
