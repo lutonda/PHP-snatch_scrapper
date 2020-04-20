@@ -32,9 +32,7 @@ function getContent($w,$x,$y,$z,$date){
     $data=$crawler->filter($z)->text();
 
     echo($data);
-    echo '---------------------------------------------';
-    echo '---------------------------------------------';
-    echo '---------------------------------------------';
+   
     $url='?';
     $url.='source='.$x;
     $url.='&data=';
@@ -43,9 +41,7 @@ function getContent($w,$x,$y,$z,$date){
     echo $url;
     //$client->takeScreenshot('screen.png'); // Yeah, screenshot!
 
-   // submitData($url);
-
-
+    submitData($url);
 }
 
 
@@ -53,15 +49,11 @@ function submitData($url)
 {
     $base_srv='http://0.0.0.0:8800';
     $base_url='/sync/_io/download/local';
-    echo '-------------------------------------------------------------------';
-    echo 'sending data';
     echo $base_srv.$base_url.$url;
 
     $ch = curl_init($base_srv.$base_url.$url);
     
-    //curl_setopt($ch, CURLOPT_FILE);
     curl_setopt($ch, CURLOPT_HEADER, 0);
-
     curl_exec($ch);
 }
 
