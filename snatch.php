@@ -12,7 +12,8 @@ $sources = [
     ['SOL', 'https://www.bancosol.ao/', 'table#CTRL_Cambios1_dynControl_quotationGrid', 'table#CTRL_Cambios1_dynControl_quotationGrid'],
     ['BNI', 'http://www.bni.ao/pt/taxas/', '.col-xs-12.rates-table table.table', '.col-xs-12.rates-table table.table'],
     ['BCI', 'https://www.bci.ao/', '.tabelas-container div.tabelas div.body', '.tabelas-container div.tabelas div.body'],
-    ['BPC', 'http://www.bpc.ao/bpc/pt/', '#foottoolbox .rightquarter .cambio tbody', '#foottoolbox .rightquarter .cambio tbody']
+    ['BPC', 'http://www.bpc.ao/bpc/pt/', '#foottoolbox .rightquarter .cambio tbody', '#foottoolbox .rightquarter .cambio tbody'],
+    ['BIC', 'https://bancobic.ao/inicio/particulares/index', 'div#widget-exchange table.tab-content-table', 'div#widget-exchange table.tab-content-table']
 ];
 function getContent($w,$x,$y,$z,$date){
 
